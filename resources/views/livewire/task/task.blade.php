@@ -89,7 +89,7 @@
             
                                     <td class="border px-4 py-2">{{ $task->name }}</td>
             
-                                    <td class="border px-4 py-2">{{ $task->category }}</td>
+                                    <td class="border px-4 py-2">{{ $task->category()->first()->name }}</td>
                                     <td class="border px-4 py-2">{{ $task->priority }}</td>
 
             

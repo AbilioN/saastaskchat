@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use Livewire\Component;
-use App\Models\Task as TaskModel;
+use App\Models\Task as Model;
 class Task extends Component
 {
 
@@ -20,12 +21,15 @@ class Task extends Component
     
     public $isOpen = false;
 
+    public $categories;
     public function mount()
     {
-        $this->tasks = TaskModel::all();
+        $this->categories = Category::all();
+        $this->tasks = Model::all();
     }
     public function render()
     {
+
         return view('livewire.task.task');
     }
 
@@ -44,7 +48,7 @@ class Task extends Component
     {
         $this->name = '';
         $this->priority = '';
-        $this->category = '';
+        $this->category_id = null;
         $this->when = '';
 
     }
@@ -54,26 +58,26 @@ class Task extends Component
     {
         $this->validate([
             'name' => 'required',
-            'category' => 'required',
+            'category_id' => 'required|exists:categories,id',
             'priority' => 'required'
         ]);
 
-        $task = new TaskModel();
+        $task = new Model();
 
         if($this->taskId)
         {
-            $task = TaskModel::find($this->taskId);
+            $task = Model::find($this->taskId);
         }
 
         $task->name = $this->name;
-        $task->category = $this->category;
+        $task->category_id = $this->category_id;
         $task->priority = $this->priority;
         $task->when = now();
 
         $task->save();
     
          
-        $this->tasks = TaskModel::all();
+        $this->tasks = Model::all();
         $this->closeModal();
         $this->resetInputFields();
 
@@ -83,7 +87,7 @@ class Task extends Component
 
     public function edit($taskId)
     {
-        $task = TaskModel::find($taskId);
+        $task = Model::find($taskId);
         $this->taskId = $task->id;
         $this->name = $task->name;
         $this->category = $task->category;
@@ -93,8 +97,8 @@ class Task extends Component
     }
     public function delete($taskId)
     {
-        $deletedTask = TaskModel::find($taskId)->delete();
-        $this->tasks = TaskModel::all();
+        $deletedTask = Model::find($taskId)->delete();
+        $this->tasks = Model::all();
 
     }
     public function closeModal()

@@ -40,9 +40,14 @@
   
                   <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Category:</label>
 
-                  <input wire:model.debounce.900ms="category" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="category" placeholder="Enter Category">
 
-                  @error('category') <span class="text-red-500">{{ $message }}</span>@enderror
+                  <select wire:model="category_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option>Selecione</option>
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                  </select>
+                  @error('category_id') <span class="text-red-500">{{ $message }}</span>@enderror
 
                 </div>
 

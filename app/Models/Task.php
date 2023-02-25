@@ -11,8 +11,13 @@ class Task extends Model
 
     protected $fillable = [
         'name',
-        'category',
+        'category_id',
         'priority',
         'when'
     ];
+
+    public function category()
+    {
+        return $this->hasOne(Category::class , 'id' , 'category_id');
+    }
 }

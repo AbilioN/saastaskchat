@@ -14,6 +14,8 @@ class Task extends Component
 
     public $priority = '';
 
+    public $description = '';
+
     public $when = '';
 
     public $taskId = null;
@@ -48,6 +50,7 @@ class Task extends Component
     {
         $this->name = '';
         $this->priority = '';
+        $this->description = '';
         $this->category_id = null;
         $this->when = '';
 
@@ -58,6 +61,7 @@ class Task extends Component
     {
         $this->validate([
             'name' => 'required',
+            'description' => 'required',
             'category_id' => 'required|exists:categories,id',
             'priority' => 'required'
         ]);
@@ -70,6 +74,7 @@ class Task extends Component
         }
 
         $task->name = $this->name;
+        $task->description = $this->description;
         $task->category_id = $this->category_id;
         $task->priority = $this->priority;
         $task->when = now();

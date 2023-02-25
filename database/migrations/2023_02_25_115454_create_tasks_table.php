@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('description');
             $table->string('priority');
             $table->unsignedBigInteger('category_id');
-            $table->dateTime('when');
+            $table->dateTime('when')->nullable();
 
 
             $table->foreign('category_id')->references('id')->on('categories');

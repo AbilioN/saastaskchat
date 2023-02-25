@@ -67,6 +67,7 @@
                                     <th class="px-4 py-2 w-20">No.</th>
             
                                     <th class="px-4 py-2">Name</th>
+                                    <th class="px-4 py-2">Description</th>
             
                                     <th class="px-4 py-2">Category</th>
             
@@ -88,6 +89,7 @@
                                     <td class="border px-4 py-2">{{ $task->id }}</td>
             
                                     <td class="border px-4 py-2">{{ $task->name }}</td>
+                                    <td class="border px-4 py-2">{{ $task->description }}</td>
             
                                     <td class="border px-4 py-2">{{ $task->category()->first()->name }}</td>
                                     <td class="border px-4 py-2">{{ $task->priority }}</td>

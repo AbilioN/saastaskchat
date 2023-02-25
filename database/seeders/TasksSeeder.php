@@ -17,25 +17,25 @@ class TasksSeeder extends Seeder
     {
             
         
-        DB::table('tasks')->insert([
-            [
-                'name' => 'validacao dos documentos',
-                'category' => 'Back Office',
-                'priority' => 'Alta',
-                'when' => Carbon::now()->addMinutes(rand(60, 180))
-            ],
-            [
-                'name' => 'Verificacao dos curriculos de contratacao',
-                'category' => 'Back Office',
-                'priority' => 'Alta',
-                'when' => Carbon::now()->addMinutes(rand(60, 180))
-            ],
-            [
-                'name' => 'Anunciar vagas no linkedim',
-                'category' => 'Back Office',
-                'priority' => 'Alta',
-                'when' => Carbon::now()->addMinutes(rand(60, 180))
-            ],
-        ]);
+        // DB::table('tasks')->insert([
+        //     [
+        //         'name' => 'validacao dos documentos',
+        //         'category' => 'Back Office',
+        //         'priority' => 'Alta',
+        //         'when' => Carbon::now()->addMinutes(rand(60, 180))
+        //     ],
+        //     [
+        //         'name' => 'Verificacao dos curriculos de contratacao',
+        //         'category' => 'Back Office',
+        //         'priority' => 'Alta',
+        //         'when' => Carbon::now()->addMinutes(rand(60, 180))
+        //     ],
+        //     [
+        //         'name' => 'Anunciar vagas no linkedim',
+        //         'category' => 'Back Office',
+        //         'priority' => 'Alta',
+        //         'when' => Carbon::now()->addMinutes(rand(60, 180))
+        //     ],
+        // ]);
     }
 }

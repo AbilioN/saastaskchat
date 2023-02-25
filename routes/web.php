@@ -26,6 +26,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
+    Route::get('/categories', function(){
+        return view('categories.index');
+    })->name('categories.index');
+
     Route::get('/tasks' , function(){
         return view('tasks.index');
     })->name('tasks.index');

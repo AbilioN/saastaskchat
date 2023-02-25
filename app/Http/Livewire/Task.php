@@ -95,7 +95,8 @@ class Task extends Component
         $task = Model::find($taskId);
         $this->taskId = $task->id;
         $this->name = $task->name;
-        $this->category = $task->category;
+        $this->description = $task->description;
+        $this->category_id = $task->category_id;
         $this->priority = $task->priority;
 
         $this->openModal();

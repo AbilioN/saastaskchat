@@ -50,7 +50,7 @@
             
                         @endif
             
-                        <button wire:click="create()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded my-3 ">Create New Task</button>
+                        <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3 ">Create New Task</button>
             
                         @if($isOpen)
             
@@ -95,7 +95,7 @@
             
                                     <td class="border px-4 py-2">
             
-                                        <button wire:click="edit({{ $task->id }})" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" >Edit</button>
+                                        <button wire:click="edit({{ $task->id }})" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" >Edit</button>
             
                                         <button wire:click="delete({{ $task->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
             

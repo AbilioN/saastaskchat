@@ -33,4 +33,8 @@ Route::middleware([
     Route::get('/tasks' , function(){
         return view('tasks.index');
     })->name('tasks.index');
+
+    Route::get('/roles' , function(){
+        return view('roles.index');
+    })->name('roles.index');
 });
